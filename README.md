@@ -28,23 +28,6 @@
 
 ---
 
-## Getting Started
-
-*(Add installation instructions, prerequisites, API keys configuration, and NDI setup steps here once your codebase is initialized.)*
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/wordit.ai.git
-
-# Navigate to project directory
-cd wordit.ai
-
-# Install dependencies
-npm install # or yarn install / pip install depending on your stack
-
-```
-
----
 
 ## Contributing
 
