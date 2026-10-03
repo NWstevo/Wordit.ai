@@ -1,6 +1,6 @@
-.Ds_Store
+.DS_Store
 Courses/
-Project-guide/
---pycache__/
+project-guide/
+__pycache__/
 .venv/
 .coverage
