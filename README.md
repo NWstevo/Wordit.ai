@@ -31,8 +31,8 @@
 
 ## Contributing
 
-We welcome contributions from developers, media directors, and tech enthusiasts passionate about enhancing church media production. Please read our [Contributing Guidelines](https://www.google.com/search?q=CONTRIBUTING.md) to get started.
+We welcome contributions from developers, media directors, and tech enthusiasts passionate about enhancing church media production. Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
 
 ## License
 
-Distributed under the [MIT License](https://www.google.com/search?q=LICENSE).
+Distributed under the [MIT License](LICENSE).

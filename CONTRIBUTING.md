@@ -1,4 +1,3 @@
-# Commit Guide
 # Contributing
 
 Use this format for commit messages:
