@@ -1,4 +1,5 @@
 # wordit.ai
+![CI](https://github.com/NWstevo/Wordit.ai/actions/workflows/ci.yml/badge.svg)
 
 > Real-time scriptural intelligence and NDI streaming for modern preachers and live production teams.
 
@@ -36,3 +37,5 @@ We welcome contributions from developers, media directors, and tech enthusiasts 
 ## License
 
 Distributed under the [MIT License](LICENSE).
+
+!
