@@ -15,13 +15,13 @@ publish in the repository and display in recordings without violating any copyri
 
 ## Options considered
 
-Translation <Rights> <Outcome> 
-
-King James Version (KJV) <Public domain>  <Chosen as the default >
-Berean Standard Bible (BSB)  <Public domain since 30 April 2023>  <Approved, added as second> 
-American Standard Version (ASV)  <Public domain>  <Approved, lower priority> 
-World English Bible (WEB) <Public domain> <Approved, lower priority>
-
+| Translation | Rights | Outcome |
+| --- | --- | --- |
+| King James Version (KJV) | Public domain | Chosen as the default |
+| Berean Standard Bible (BSB) | Public domain since 30 April 2023 | Approved, added second |
+| American Standard Version (ASV) | Public domain | Approved, lower priority |
+| World English Bible (WEB) | Public domain | Approved, lower priority |
+| New King James Version (NKJV) | Copyrighted | Deferred |
 
 NKJV was the preferred translation, because many churches use it. It is
 under copyright, so we cannot store the full text in a public repository
