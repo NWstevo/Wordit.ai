@@ -4,3 +4,4 @@ project-guide/
 __pycache__/
 .venv/
 .coverage
+*.egg-info/
