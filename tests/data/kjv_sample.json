@@ -1,0 +1,9 @@
+{
+  "translation": "KJV",
+  "books": {
+    "Genesis": {"1": {"1": "In the beginning God created the heaven and the earth."}},
+    "Psalms": {"23": {"1": "The LORD is my shepherd; I shall not want."}},
+    "John": {"3": {"16": "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."}},
+    "Acts": {"8": {"37": "And Philip said, If thou believest with all thine heart, thou mayest. And he answered and said, I believe that Jesus Christ is the Son of God."}}
+  }
+}
