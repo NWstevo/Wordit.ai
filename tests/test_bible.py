@@ -1,5 +1,5 @@
 import pytest
-from wordit.bible import Bible
+from wordit.bible import Bible, VerseNotFoundError
 
 sample_bible = "tests/data/kjv_sample.json"
 
@@ -11,5 +11,5 @@ def test_verse_returns_text_for_valid_reference():
 
 def test_verse_raises_for_missing_verse():
     bible = Bible.from_file(sample_bible)
-    with pytest.raises(KeyError):
+    with pytest.raises(VerseNotFoundError):
         bible.verse("John", 3, 72)

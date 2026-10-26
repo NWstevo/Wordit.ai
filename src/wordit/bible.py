@@ -4,6 +4,10 @@ from pathlib import Path
 import json
 
 
+class VerseNotFoundError(LookupError):
+    """raises when a verse does not exist in the translation"""
+
+
 class Bible:
     """One Bible translation, loaded from a JSON file."""
 
@@ -18,8 +22,10 @@ class Bible:
         return cls(data)
 
     def verse(self, book: str, chapter: int, number: int) -> str:
-        """Return the text of a verse, or raise KeyError if it does not exist."""
+        """Return the text of a verse, or raise VerseNotFoundError if it does not exist."""
         try:
             return self.data["books"][book][str(chapter)][str(number)]
         except KeyError as exc:
-            raise KeyError(f"Verse not found: {book} {chapter}:{number}") from exc
+            raise VerseNotFoundError(
+                f"Verse not found: {book} {chapter}:{number}"
+            ) from exc
