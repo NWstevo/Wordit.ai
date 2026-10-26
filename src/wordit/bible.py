@@ -5,7 +5,7 @@ import json
 
 
 class VerseNotFoundError(LookupError):
-    """raises when a verse does not exist in the translation"""
+    """Raised when a verse does not exist in the translation"""
 
 
 class Bible:
