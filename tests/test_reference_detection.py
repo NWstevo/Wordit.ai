@@ -18,3 +18,10 @@ def test_finds_reference_in_sentence(text, expected):
 
 def test_returns_empty_list_when_no_reference():
     assert not find_references("Good morning, people of God")
+
+def test_finds_several_references_in_order():
+    text = "Lets read John 3:16 and then move to Romans 8 verse 28"
+    assert find_references(text) == [
+        Reference("John", 3, 16),
+        Reference("Romans", 8, 28),
+    ]
