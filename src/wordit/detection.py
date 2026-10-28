@@ -6,7 +6,7 @@ from wordit.reference import Reference
 
 BOOKS = (
     "Genesis",
-    "Psalm",
+    "Psalms",
     "John",
     "Romans",
     "Song of Solomon",
