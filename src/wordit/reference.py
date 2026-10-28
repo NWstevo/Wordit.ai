@@ -14,7 +14,7 @@ class Reference:
 
 def parse_reference(text: str) -> Reference:
     """Transform a reference string like John 3:16 into a reference."""
-    book, chapter_verse = text.split()
+    book, chapter_verse = text.rsplit(" ", 1)
     chapter, verse = chapter_verse.split(":")
 
     return Reference(book, int(chapter), int(verse))
