@@ -42,12 +42,12 @@ so that the text is accurate and the church needs no licence in phase 1.
 
 **Acceptance criteria**
 
-- **Given** a valid reference, 
+- **Given** a valid reference,
   **when** the verse is looked up,
   **then** the KJV text is returned with the label "KJV".
 
 - **Given** a reference that does not exist in KJV (for example John 3:591),
-  **when** it is looked up, 
+  **when** it is looked up,
   **then** the system reports it as invalid.
 
 Source: decision 001.
@@ -59,11 +59,11 @@ so that a reference the system misses does not leave the congregation waiting.
 
 **Acceptance criteria**
 
-- **Given** I type a valid reference, 
+- **Given** I type a valid reference,
   **when** I submit it,
   **then** it becomes a suggestion I can approve.
 
-- **Given** I type an invalid reference, 
+- **Given** I type an invalid reference,
   **when** I submit it,
   **then** the system shows an error and creates no suggestion.
 
@@ -82,10 +82,10 @@ so that I don't have to search for it while I also do other things.
   **then** a suggestion appears with book, chapter, verse and KJV text.
 
 - **Given** the preacher says something that is not a valid reference,
-  **when** the system processes it, 
+  **when** the system processes it,
   **then** no suggestion is created.
 
-- **Given** a reference is spoken, 
+- **Given** a reference is spoken,
   **when** the suggestion appears,
   **then** it appears within 5 seconds (target, measured in evaluation).
 
@@ -98,20 +98,20 @@ so that only scripture I have checked reaches the screen.
 
 **Acceptance criteria**
 
-- **Given** a pending suggestion, 
+- **Given** a pending suggestion,
   **when** I approve it,
   **then** it is staged for preview.
 
-- **Given** a pending suggestion, 
+- **Given** a pending suggestion,
   **when** I reject it,
   **then** it is removed and can never be sent live.
 
-- **Given** a pending suggestion, 
+- **Given** a pending suggestion,
   **when** I take no action,
   **then** it is never shown on the live display.
 
-- **Given** I approve or reject a suggestion,
-  **When** I approve or reject a suggestion, 
+- **Given** a pending suggestion,
+  **when** I approve or reject it,
   **then** the decision is recorded in the service log.
 
 Source: Gerald can spot a wrong quotation, so he is the final check.
@@ -123,15 +123,15 @@ so that the congregation never sees a mistake.
 
 **Acceptance criteria**
 
-- **Given** a staged verse, 
+- **Given** a staged verse,
   **when** I preview it,
   **then** I see the reference, the verse text and the translation label.
 
-- **Given** a previewed verse, 
+- **Given** a previewed verse,
   **when** I send it live,
   **then** it appears on the live display. Sending live is a separate step from approving.
 
-- **Given** a staged verse, 
+- **Given** a staged verse,
   **when** I cancel it,
   **then** nothing changes on the live display.
 
