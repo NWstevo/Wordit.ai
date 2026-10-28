@@ -14,7 +14,9 @@ BOOKS = (
     "Matthew",
 )
 
-REFERENCE_PATTERN = re.compile(r"\b(" + "|".join(BOOKS) + r")\s+(\d+):(\d+)")
+REFERENCE_PATTERN = re.compile(
+    r"\b(" + "|".join(BOOKS) + r")\s+(?:chapter\s+)?(\d+)(?::|\s+verse\s+)(\d+)"
+)
 
 
 def find_references(text: str) -> list[Reference]:
@@ -22,6 +24,6 @@ def find_references(text: str) -> list[Reference]:
     references = []
     for match in REFERENCE_PATTERN.finditer(text):
         references.append(
-            Reference((match.group(1)), int(match.group(2)), int(match.group(3)))
+            Reference(match.group(1), int(match.group(2)), int(match.group(3)))
         )
     return references
