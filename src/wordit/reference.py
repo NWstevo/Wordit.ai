@@ -13,7 +13,7 @@ class Reference:
 
 
 def parse_reference(text: str) -> Reference:
-    """Transform a reference string like John 3:16 into a reference."""
+    """Transform a reference string like John 3:16 into a Reference."""
     book, chapter_verse = text.rsplit(" ", 1)
     chapter, verse = chapter_verse.split(":")
 

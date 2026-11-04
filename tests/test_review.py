@@ -1,4 +1,5 @@
 import pytest
+
 from wordit.candidate import Candidate, Status
 from wordit.reference import Reference
 from wordit.review import review_candidate
@@ -6,14 +7,14 @@ from wordit.review import review_candidate
 
 @pytest.fixture
 def pending_candidate():
-    """A fresh suggestion for John 3:16 that the Operator is still to decide on"""
+    """A fresh suggestion for John 3:16 that the operator is still to decide on."""
     return Candidate(Reference("John", 3, 16), "Turn with me to John 3:16")
 
 
 def test_pressing_a_to_approve(pending_candidate):
     review_candidate(
         pending_candidate, ask=lambda prompt: "a"
-    )  # fake operator presses "a" (lambda function)
+    )  # Replace the keyboard with a fake so the test can run without an operator
     assert pending_candidate.status is Status.APPROVED
 
 

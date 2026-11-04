@@ -1,4 +1,5 @@
 import pytest
+
 from wordit.reference import Reference, parse_reference
 
 

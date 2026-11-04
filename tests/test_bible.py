@@ -1,4 +1,5 @@
 import pytest
+
 from wordit.bible import Bible, VerseNotFoundError
 
 SAMPLE_BIBLE = "tests/data/kjv_sample.json"

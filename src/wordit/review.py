@@ -1,4 +1,4 @@
-"""let the Operator approve or reject a candidate in the terminal"""
+"""Allows the Operator to approve or reject a candidate in the terminal"""
 
 from wordit.candidate import Candidate
 

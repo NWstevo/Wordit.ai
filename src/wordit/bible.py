@@ -5,18 +5,18 @@ import json
 
 
 class VerseNotFoundError(LookupError):
-    """Raised when a verse does not exist in the translation"""
+    """Raised when a verse does not exist in the translation."""
 
 
 class Bible:
-    """One Bible translation, loaded from a JSON file."""
+    """One Bible translation. loaded from a JSON file."""
 
     def __init__(self, data):
         self.data = data
 
     @classmethod
     def from_file(cls, path):
-        """Reads a translation from a JSON file and returns a Bible."""
+        """Reads a translation from a JSON file and return a Bible."""
         with Path(path).open(encoding="utf8") as f:
             data = json.load(f)
         return cls(data)
