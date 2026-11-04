@@ -1,6 +1,9 @@
 import pytest
+import json
 
 from wordit.kjv_import import clean_verse_text, build_books
+from wordit.bible import Bible
+from wordit.kjv_import import convert_file
 
 
 @pytest.mark.parametrize(
@@ -23,3 +26,14 @@ def test_build_books_uses_the_detector_name_for_song_of_solomon():
 def test_build_books_nests_verses_by_book_chapter_and_verse():
     source = {"John 3:16": "#For God so loved the world"}
     assert build_books(source) == {"John": {"3": {"16": "For God so loved the world"}}}
+
+
+def test_converted_file_can_be_read_by_bible(tmp_path):
+    source = tmp_path / "source.json"
+    source.write_text(json.dumps({"John 3:16": "# For God so loved the world"}))
+    target = tmp_path / "kjv.json"
+
+    convert_file(source, target)
+
+    bible = Bible.from_file(target)
+    assert bible.verse("John", 3, 16) == "For God so loved the world"

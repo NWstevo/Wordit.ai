@@ -1,5 +1,8 @@
 """Convert the public-domain KJV source file into Wordit.ai's Bible format."""
 
+import json
+from pathlib import Path
+
 from wordit.reference import parse_reference
 
 SOURCE_BOOK_NAMES = {"Solomon's Song": "Song of Solomon"}
@@ -26,3 +29,17 @@ def build_books(verses: dict[str, str]) -> dict[str, dict[str, dict[str, str]]]:
             books[book][chapter] = {}
         books[book][chapter][verse] = clean_verse_text(raw_text)
     return books
+
+
+def convert_file(source_path: Path, target_path: Path) -> None:
+    """read the raw Kjv source and write it as a wordit.ai Bible file."""
+    with source_path.open(encoding="utf-8") as source:
+        verses = json.load(source)
+    bible = {"translation": "KJV", "books": build_books(verses)}
+
+    with target_path.open("w", encoding="utf-8") as target:
+        json.dump(bible, target, ensure_ascii=False)
+
+
+if __name__ == "__main__":
+    convert_file(Path("data/raw/kjv-verses-1769.json"), Path("data/kjv.json"))
