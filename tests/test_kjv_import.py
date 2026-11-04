@@ -1,6 +1,6 @@
 import pytest
 
-from wordit.kjv_import import clean_verse_text
+from wordit.kjv_import import clean_verse_text, build_books
 
 
 @pytest.mark.parametrize(
@@ -13,3 +13,13 @@ from wordit.kjv_import import clean_verse_text
 )
 def test_clean_verse_text_removes_source_markers(raw, expected):
     assert clean_verse_text(raw) == expected
+
+
+def test_build_books_uses_the_detector_name_for_song_of_solomon():
+    source = {"Solomon's Song 1:1": "The song of songs"}
+    assert "Song of Solomon" in build_books(source)
+
+
+def test_build_books_nests_verses_by_book_chapter_and_verse():
+    source = {"John 3:16": "#For God so loved the world"}
+    assert build_books(source) == {"John": {"3": {"16": "For God so loved the world"}}}
