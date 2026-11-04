@@ -16,7 +16,7 @@ class Status(Enum):
 
 @dataclass
 class Candidate:
-    """A Detected reference waiting for the operator's approval or rejection."""
+    """A detected reference waiting for the operator's approval or rejection."""
 
     reference: Reference
     heard_text: str
