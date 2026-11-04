@@ -17,7 +17,7 @@ class Bible:
     @classmethod
     def from_file(cls, path):
         """Reads a translation from a JSON file and return a Bible."""
-        with Path(path).open(encoding="utf8") as f:
+        with Path(path).open(encoding="utf-8") as f:
             data = json.load(f)
         return cls(data)
 
