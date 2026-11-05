@@ -5,11 +5,6 @@ from wordit.reference import Reference
 from wordit.review import review_candidate
 
 
-@pytest.fixture
-def pending_candidate():
-    """A fresh suggestion for John 3:16 that the operator is still to decide on."""
-    return Candidate(Reference("John", 3, 16), "Turn with me to John 3:16")
-
 
 def test_pressing_a_to_approve(pending_candidate):
     review_candidate(
