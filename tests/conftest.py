@@ -10,4 +10,5 @@ def pending_candidate():
     return Candidate(
         reference=Reference("John", 3, 16),
         heard_text="turn with me to John 3:16",
+        verse_text="For God so loved the world",
     )

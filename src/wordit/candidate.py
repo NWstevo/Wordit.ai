@@ -20,6 +20,7 @@ class Candidate:
 
     reference: Reference
     heard_text: str
+    verse_text: str
     status: Status = Status.PENDING
 
     def approve(self) -> None:
