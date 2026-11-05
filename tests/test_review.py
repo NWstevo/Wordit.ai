@@ -1,8 +1,5 @@
-import pytest
-
-from wordit.candidate import Candidate, Status
-from wordit.reference import Reference
 from wordit.review import review_candidate
+from wordit.candidate import Status
 
 
 def test_pressing_a_to_approve(pending_candidate):

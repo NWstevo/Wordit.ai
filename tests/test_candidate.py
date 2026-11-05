@@ -1,7 +1,4 @@
-import pytest
-
-from wordit.candidate import Candidate, Status
-from wordit.reference import Reference
+from wordit.candidate import Status
 
 
 def test_new_candidate_starts_pending(pending_candidate):
