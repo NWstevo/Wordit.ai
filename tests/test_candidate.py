@@ -4,7 +4,6 @@ from wordit.candidate import Candidate, Status
 from wordit.reference import Reference
 
 
-
 def test_new_candidate_starts_pending(pending_candidate):
     assert pending_candidate.status is Status.PENDING
 

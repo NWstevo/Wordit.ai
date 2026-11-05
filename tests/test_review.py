@@ -5,7 +5,6 @@ from wordit.reference import Reference
 from wordit.review import review_candidate
 
 
-
 def test_pressing_a_to_approve(pending_candidate):
     review_candidate(
         pending_candidate, ask=lambda prompt: "a"

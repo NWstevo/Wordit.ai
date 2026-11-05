@@ -3,6 +3,7 @@ import pytest
 from wordit.candidate import Candidate
 from wordit.reference import Reference
 
+
 @pytest.fixture
 def pending_candidate():
     """A new suggestion of John 3:16 that the operator is still to decide on"""
