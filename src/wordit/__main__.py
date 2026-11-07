@@ -12,14 +12,16 @@ BIBLE_FILE = Path("data/kjv.json")
 def main() -> None:
     """Suggest verses from a sentence and show the approved ones."""
     bible = Bible.from_file(BIBLE_FILE)
-    text = input("Preacher says: ")
-    for candidate in suggest_candidates(text, bible):
-        review_candidate(candidate)
-        if candidate.status is Status.APPROVED:
-            ref = candidate.reference
-            print(
-                f"LIVE: {ref.book} {ref.chapter}:{ref.verse} (KJV) {candidate.verse_text}"
-            )
+    text = input("Type what the preacher says. Press Enter on an empty line to finish.")
+    while text:
+        for candidate in suggest_candidates(text, bible):
+            review_candidate(candidate)
+            if candidate.status is Status.APPROVED:
+                ref = candidate.reference
+                print(
+                    f"LIVE: {ref.book} {ref.chapter}:{ref.verse} (KJV) {candidate.verse_text}"
+                )
+        text = input("Preacher says:")
 
 
 if __name__ == "__main__":
