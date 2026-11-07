@@ -13,3 +13,7 @@ from wordit.reference import Reference, parse_reference
 )
 def test_parse_simple_reference(text, expected):
     assert parse_reference(text) == expected
+
+
+def test_reference_prints_like_a_bible_reference():
+    assert str(Reference("Romans", 8, 28)) == "Romans 8:28"

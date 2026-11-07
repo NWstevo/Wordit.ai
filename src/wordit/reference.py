@@ -11,6 +11,11 @@ class Reference:
     chapter: int
     verse: int
 
+    def __str__(self) -> str:
+        """Return the reference the way people would normally write it,
+        for example "Romans 8:28"."""
+        return f"{self.book} {self.chapter}:{self.verse}"
+
 
 def parse_reference(text: str) -> Reference:
     """Transform a reference string like John 3:16 into a Reference."""
