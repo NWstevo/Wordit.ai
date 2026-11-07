@@ -27,3 +27,10 @@ def test_wrong_key_asks_again(pending_candidate):
 
     review_candidate(pending_candidate, ask=fake_operator)
     assert pending_candidate.status is Status.APPROVED
+
+
+def test_review_shows_the_verse_text_before_asking(pending_candidate, capsys):
+    review_candidate(pending_candidate, ask=lambda prompt: "a")
+    shown = capsys.readouterr().out
+    assert "John 3:16" in shown
+    assert "For God so loved the world" in shown
