@@ -6,4 +6,4 @@ __pycache__/
 .coverage
 *.egg-info/
 data/raw/
-decision.log
+decisions.log
