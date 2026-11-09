@@ -19,10 +19,7 @@ def main(read_input=input) -> None:
         for candidate in suggest_candidates(text, bible):
             review_candidate(candidate, ask=read_input)
             if candidate.status is Status.APPROVED:
-                ref = candidate.reference
-                print(
-                    f"LIVE: {ref.book} {ref.chapter}:{ref.verse} (KJV) {candidate.verse_text}"
-                )
+                print(f"LIVE: {candidate.reference} (KJV) {candidate.verse_text}")
         text = read_input("Preacher says:")
 
 
