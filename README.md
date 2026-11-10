@@ -104,6 +104,25 @@ pylint src
 mypy src
 pytest
 ```
+## How it works
+
+```mermaid
+flowchart LR
+    A[Typed sentence] --> B[detection.py<br>find references]
+    B --> C[bible.py<br>look up KJV verse]
+    C -->|verse exists| D[suggestion.py<br>create candidate]
+    C -->|verse missing| X[skipped]
+    D --> E[review.py<br>operator approves or rejects]
+    E -->|approved| F[LIVE output]
+    E -->|rejected| G[not shown]
+    E --> H[decision_log.py<br>decisions.log]
+```
+
+A sentence is searched for Bible references. Each reference is looked up in the
+King James Version; references to verses that do not exist are skipped. Every
+remaining reference becomes a candidate that the operator approves or rejects.
+Only approved verses go live, and every decision is written to `decisions.log`.
+
 
 ## Future Work (phase 2)
 
