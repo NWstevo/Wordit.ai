@@ -104,6 +104,7 @@ pylint src
 mypy src
 pytest
 ```
+
 ## How it works
 
 ```mermaid
@@ -123,7 +124,6 @@ King James Version; references to verses that do not exist are skipped. Every
 remaining reference becomes a candidate that the operator approves or rejects.
 Only approved verses go live, and every decision is written to `decisions.log`.
 
-
 ## Future Work (phase 2)
 
 Planned: speech recognition, so Wordit.ai listens to the sermon directly.
@@ -131,7 +131,6 @@ Planned: speech recognition, so Wordit.ai listens to the sermon directly.
 Planned: NDI output for OBS Studio, vMix, EasyWorship and ProPresenter.
 
 ---
-
 
 ## Contributing
 
