@@ -20,7 +20,44 @@ Wordit.ai is currently in phase 1. It runs in the terminal and uses a text as sa
 
 Nothing is displayed on the screen without the operator's approval.
 
----
+## Requirements
+
+- Python 3.11 or newer
+- Git
+
+## Installation
+
+```bash
+git clone https://github.com/NWstevo/Wordit.ai.git
+cd Wordit.ai
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+```
+
+## Getting started
+
+Start Wordit.ai and type a sentence as the preacher would say it:
+
+```bash
+python -m wordit
+```
+
+```text
+Type what the preacher says. Press Enter on an empty line to finish.
+Preacher says: Turn with me to John 3:16
+Suggestion: John 3:16
+Verse (KJV): For God so loved the world, that he gave his only begotten Son, ...
+Heard: "Turn with me to John 3:16"
+Approve (a) or Reject (r)? a
+LIVE: John 3:16 (KJV) For God so loved the world, ...
+```
+
+Press Enter on an empty line to stop. Each decision is saved in `decisions.log`.
+
+## Troubleshooting
+
+**`FileNotFoundError: ... 'data/kjv.json'`**: run Wordit.ai from the project folder (`cd Wordit.ai`), because it looks for the Bible data relative to where you start it.
 
 ## Future Work (phase 2)
 
