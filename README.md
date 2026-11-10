@@ -1,31 +1,26 @@
 # wordit.ai
 ![CI](https://github.com/NWstevo/Wordit.ai/actions/workflows/ci.yml/badge.svg)
 
-> Real-time scriptural intelligence and NDI streaming for modern preachers and live production teams.
-
-**wordit.ai** is an AI-powered assistant designed to bridge the gap between the pulpit and the control room. By listening dynamically to a sermon in real time, the software instantly identifies Bible verses, references, and spoken keywords, and outputs clean visual overlays via **NDI®** directly to industry-standard streaming and presentation platforms.
+**Wordit.ai** suggests Bible references from a sermon on screen, and a church operator approves which verses go live.
 
 ---
 
-## Key Features
+## Key Features at the moment
 
-* **Real-Time Speech-to-Scripture AI:** Automatically detects biblical citations, contextual references, and thematic passages as they are spoken.
-* **Native NDI® Output:** Streams transparent, low-latency visual layers over your local network without the need for physical capture cards.
-* **Universal Software Compatibility:** Integrates seamlessly with production tools like **OBS Studio, vMix, EasyWorship, and ProPresenter**.
-* **Live Accessibility Captions:** Generates real-time closed captions for online viewers and the hard of hearing.
-* **Multi-Translation Support:** Instantly fetch and display verses in KJV, NIV, ESV, NKJV, NLT, and more.
-* **Zero-Operator Workflow:** Fully automated cueing frees up your media team to focus on the overall broadcast quality.
+Wordit.ai is currently in phase 1. It runs in the terminal and uses a text as sample input for the preacher's voice or sermon.
+
+- Finds Bible references in a sentence, such as "Romans 8:28" or "John chapter 3 verse 16".
+- Looks up each verse using the King James Version of the Bible.
+- Shows each suggestion to the operator, who decides to either approve or reject it.
+- Logs every decision in a log file.
+
+Nothing is displayed on the screen without the operator's approval.
 
 ---
 
-## Targeted Supported Ecosystems
+## Future Work (phase 2)
 
-| Software / Platform | Compatibility | Integration Method |
-| --- | --- | --- |
-| **OBS Studio** | Full Support | NDI Source Plugin / Video Feed |
-| **vMix** | Full Support | Native NDI Input |
-| **EasyWorship** | Supported | NDI / External Feed |
-| **ProPresenter** | Supported | Network Link / NDI Input |
+Planned: NDI output for OBS Studio, vMix, EasyWorship and ProPresenter.
 
 ---
 
@@ -37,5 +32,3 @@ We welcome contributions from developers, media directors, and tech enthusiasts 
 ## License
 
 Distributed under the [MIT License](LICENSE).
-
-!
