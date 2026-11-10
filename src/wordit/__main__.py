@@ -16,7 +16,7 @@ def main(read_input=input) -> None:
     """Suggest verses from a sentence and show the approved ones."""
     bible = Bible.from_file(BIBLE_FILE)
     text = read_input(
-        "Type what the preacher says. Press Enter on an empty line to finish."
+        "Type what the preacher says. Press Enter on an empty line to finish. "
     )
     while text:
         for candidate in suggest_candidates(text, bible):
@@ -24,7 +24,7 @@ def main(read_input=input) -> None:
             log_decision(candidate, LOG_FILE)
             if candidate.status is Status.APPROVED:
                 print(f"LIVE: {candidate.reference} (KJV) {candidate.verse_text}")
-        text = read_input("Preacher says:")
+        text = read_input("Preacher says: ")
 
 
 if __name__ == "__main__":

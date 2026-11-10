@@ -2,7 +2,7 @@
 
 from wordit.candidate import Candidate
 
-QUESTION = "Approve (a) or Reject (r)?"
+QUESTION = "Approve (a) or Reject (r)? "
 
 
 def review_candidate(candidate: Candidate, ask=input) -> None:
