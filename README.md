@@ -2,7 +2,9 @@
 
 ![CI](https://github.com/NWstevo/Wordit.ai/actions/workflows/ci.yml/badge.svg)
 
-**Wordit.ai** suggests Bible references from a sermon on screen, and a church operator approves which verses go live. Created by Stephen Wiendoh Ntah (NWstevo), CODE University of Applied Sciences, Berlin.
+**Wordit.ai** suggests Bible references from a sermon on screen, and a church operator approves which verses go live.
+
+Created by Stephen Wiendoh Ntah (NWstevo), CODE University of Applied Sciences, Berlin.
 
 ---
 
@@ -21,6 +23,8 @@ Nothing is displayed on the screen without the operator's approval.
 ---
 
 ## Future Work (phase 2)
+
+Planned: speech recognition, so Wordit.ai listens to the sermon directly.
 
 Planned: NDI output for OBS Studio, vMix, EasyWorship and ProPresenter.
 
