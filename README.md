@@ -1,7 +1,8 @@
-# wordit.ai
+# Wordit.ai
+
 ![CI](https://github.com/NWstevo/Wordit.ai/actions/workflows/ci.yml/badge.svg)
 
-**Wordit.ai** suggests Bible references from a sermon on screen, and a church operator approves which verses go live.
+**Wordit.ai** suggests Bible references from a sermon on screen, and a church operator approves which verses go live. Created by Stephen Wiendoh Ntah (NWstevo), CODE University of Applied Sciences, Berlin.
 
 ---
 
@@ -12,6 +13,7 @@ Wordit.ai is currently in phase 1. It runs in the terminal and uses a text as sa
 - Finds Bible references in a sentence, such as "Romans 8:28" or "John chapter 3 verse 16".
 - Looks up each verse using the King James Version of the Bible.
 - Shows each suggestion to the operator, who decides to either approve or reject it.
+- Shows approved verses as live output.
 - Logs every decision in a log file.
 
 Nothing is displayed on the screen without the operator's approval.
