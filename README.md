@@ -59,6 +59,52 @@ Press Enter on an empty line to stop. Each decision is saved in `decisions.log`.
 
 **`FileNotFoundError: ... 'data/kjv.json'`**: run Wordit.ai from the project folder (`cd Wordit.ai`), because it looks for the Bible data relative to where you start it.
 
+## Running the tests
+
+```bash
+pytest
+```
+
+The test suite has 55 tests, runs in under a second, and covers 98 % of the code.
+To see which lines are covered, run:
+
+```bash
+pytest --cov=wordit --cov-report=term-missing
+```
+
+The two uncovered lines only start the program when a module is run directly
+(`if __name__ == "__main__":`). The code they call is tested.
+
+| Test type | Example in this project |
+| --- | --- |
+| Unit | Parsing "John 3:16" into book, chapter and verse |
+| Integration | Converting the KJV source file and reading it back with `Bible` |
+| End-to-end | A typed sentence travelling through the whole program to a live verse |
+| Labelled dataset | 25 real sermon sentences checked against the detector |
+
+The tests replace the keyboard and the clock with fakes, so they run without a
+person and give the same result every time.
+
+## Code quality tools
+
+Every push runs these checks on GitHub Actions (see the CI badge at the top):
+
+| Tool | Checks |
+| --- | --- |
+| Black | Consistent formatting |
+| Pylint | Code style and common mistakes |
+| mypy | Type hints match how values are used |
+| pytest with pytest-cov | All tests pass, and how much code they cover |
+
+Run the same checks locally before committing:
+
+```bash
+black src tests
+pylint src
+mypy src
+pytest
+```
+
 ## Future Work (phase 2)
 
 Planned: speech recognition, so Wordit.ai listens to the sermon directly.
