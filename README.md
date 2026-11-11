@@ -132,10 +132,32 @@ Planned: NDI output for OBS Studio, vMix, EasyWorship and ProPresenter.
 
 ---
 
+## Documentation
+
+| Document | What you find there |
+| --- | --- |
+| [Operator persona and user stories](docs/discovery/persona.md) | Who Wordit.ai is for, and the five user stories it implements |
+| [Supported reference formats](docs/reference-formats.md) | Which ways of naming a verse are detected, and which are not yet |
+| [Decision: Bible translation](docs/decisions/001-bible-translation.md) | Why phase 1 uses the King James Version |
+| [Bible data](data/README.md) | Where `kjv.json` comes from and how it was created |
+
+## How AI was used
+
+I used AI tools as a tutor and reviewer while building Wordit.ai: to explain
+concepts, review my code and documents, and suggest next steps. A global Git hook
+also asks an AI model to look for bugs before each commit. I typed, ran and
+debugged all of the code myself. Many tests and some code patterns started as
+examples from an AI assistant, which I adapted, checked against the detector and
+reviewed before using.
+
 ## Contributing
 
-We welcome contributions from developers, media directors, and tech enthusiasts passionate about enhancing church media production. Please read our [Contributing Guidelines](CONTRIBUTING.md) to get started.
+Wordit.ai is a student project. To report a bug or suggest an improvement, open an
+[issue](https://github.com/NWstevo/Wordit.ai/issues). Commit messages follow the
+format in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## License
+## Credits and license
 
-Distributed under the [MIT License](LICENSE).
+- Bible text: King James Version (1769), public domain, from
+  [farskipper/kjv](https://github.com/farskipper/kjv).
+- Code: [MIT License](LICENSE).
