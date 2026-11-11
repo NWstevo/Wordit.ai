@@ -140,13 +140,14 @@ Planned: NDI output for OBS Studio, vMix, EasyWorship and ProPresenter.
 | [Supported reference formats](docs/reference-formats.md) | Which ways of naming a verse are detected, and which are not yet |
 | [Decision: Bible translation](docs/decisions/001-bible-translation.md) | Why phase 1 uses the King James Version |
 | [Bible data](data/README.md) | Where `kjv.json` comes from and how it was created |
+| [Risk register](docs/risks.md) | What could go wrong in phase 1, and how each risk is handled |
 
 ## How AI was used
 
 I used AI tools as a tutor and reviewer while building Wordit.ai: to explain
 concepts, review my code and documents, and suggest next steps. A global Git hook
 also asks an AI model to look for bugs before each commit. I typed, ran and
-debugged all of the code myself. Many tests and some code patterns started as
+debugged most of the code myself. Many tests and some code patterns started as
 examples from an AI assistant, which I adapted, checked against the detector and
 reviewed before using.
 
