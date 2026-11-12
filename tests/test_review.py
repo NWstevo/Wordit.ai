@@ -34,3 +34,5 @@ def test_review_shows_the_verse_text_before_asking(pending_candidate, capsys):
     shown = capsys.readouterr().out
     assert "John 3:16" in shown
     assert "For God so loved the world" in shown
+
+    assert "(KJV)" in shown
