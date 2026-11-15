@@ -142,6 +142,7 @@ Planned: NDI output for OBS Studio, vMix, EasyWorship and ProPresenter.
 | [Bible data](data/README.md) | Where `kjv.json` comes from and how it was created |
 | [Risk register](docs/risks.md) | What could go wrong in phase 1, and how each risk is handled |
 | [MVP requirements](docs/requirements.md) | What phase 1 must do, and which test proves each requirement |
+| [Tutorial: your first practice service](docs/tutorial.md) | A 10-minute walk-through for new operators: approve, reject, and read the log |
 
 ## How AI was used
 
