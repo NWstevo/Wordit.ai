@@ -19,7 +19,13 @@ def main(read_input=input) -> None:
         "Type what the preacher says. Press Enter on an empty line to finish. "
     )
     while text:
-        for candidate in suggest_candidates(text, bible):
+
+        candidates = suggest_candidates(text, bible)
+
+        if not candidates:
+            print("No Bible references found in the text.")
+
+        for candidate in candidates:
             review_candidate(candidate, ask=read_input)
             log_decision(candidate, LOG_FILE)
             if candidate.status is Status.APPROVED:

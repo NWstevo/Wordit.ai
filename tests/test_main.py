@@ -24,3 +24,15 @@ def test_rejected_reference_does_not_go_live(capsys):
     main(read_input=fake_operator)
     shown = capsys.readouterr().out
     assert "LIVE:" not in shown
+
+
+def test_no_references_found(capsys):
+    # The fake operator types a sentence with no references, then stops the program.
+    keys = ["Halelujah, people of God", ""]
+
+    def fake_operator(prompt):
+        return keys.pop(0)
+
+    main(read_input=fake_operator)
+    shown = capsys.readouterr().out
+    assert "No Bible references found in the text." in shown
