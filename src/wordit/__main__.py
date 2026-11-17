@@ -23,7 +23,7 @@ def main(read_input=input) -> None:
         candidates = suggest_candidates(text, bible)
 
         if not candidates:
-            print("No Bible references found in the text.")
+            print("No valid Bible reference found in the text.")
 
         for candidate in candidates:
             review_candidate(candidate, ask=read_input)

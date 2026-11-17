@@ -11,7 +11,7 @@ def test_approved_reference_goes_live(capsys):
 
     main(read_input=fake_operator)
     shown = capsys.readouterr().out
-    assert "LIVE: John 3:16" in shown
+    assert "LIVE: John 3:16 (KJV)" in shown
 
 
 def test_rejected_reference_does_not_go_live(capsys):
@@ -35,4 +35,16 @@ def test_no_references_found(capsys):
 
     main(read_input=fake_operator)
     shown = capsys.readouterr().out
-    assert "No Bible references found in the text." in shown
+    assert "No valid Bible reference found in the text." in shown
+
+
+def test_invalid_reference(capsys):
+    # The fake operator types an invalid reference, then stops the program.
+    keys = ["John 4:109", ""]
+
+    def fake_operator(prompt):
+        return keys.pop(0)
+
+    main(read_input=fake_operator)
+    shown = capsys.readouterr().out
+    assert "No valid Bible reference found in the text." in shown
