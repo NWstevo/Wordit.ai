@@ -3,7 +3,7 @@
 This page lists what phase 1 of Wordit.ai must do. For each requirement it shows
 whether the current code does it and which test proves it. The requirements are the
 acceptance criteria of the user stories in the [operator persona](discovery/persona.md).
-Last reviewed: 12 November 2026.
+Last reviewed: 17 November 2026.
 
 ## How phase 1 works
 
@@ -11,7 +11,8 @@ Phase 1 runs in a terminal (`python -m wordit`). The operator types what the pre
 says, one line at a time. For each line, Wordit.ai:
 
 1. finds every Bible reference in a [supported form](reference-formats.md)
-2. looks each one up in the King James Version, and silently drops any that do not exist
+2. looks each one up in the King James Version, and drops any that do not exist. If
+   nothing is left, it prints "No valid Bible reference found in the text."
 3. shows each remaining suggestion with the reference, KJV text and the heard line, then
    asks the operator to either "Approve (a) or Reject (r)?". Any other key apart from "a" or "r" asks the question again
 4. appends the decision to `decisions.log` as time, decision and reference
@@ -39,10 +40,10 @@ ranges, a separate live display, NDI output and a graphical interface. See
 | Story | Requirement | Status | Test |
 | --- | --- | --- | --- |
 | US-1 | A valid reference returns the KJV text | Met | `test_verse_returns_text_for_valid_reference` |
-| US-1 | The text is labelled "KJV" | Met in the output: the review screen and the live line print a fixed "KJV" label. The lookup returns only the text | `test_review_shows_the_verse_text_before_asking` (review screen only) |
-| US-1 | A reference that does not exist is reported as invalid | Met at lookup (`VerseNotFoundError`). The app drops it silently; see US-2 | `test_verse_raises_for_missing_verse` |
+| US-1 | The text is labelled "KJV" | Met in the output: the review screen and the live line print a fixed "KJV" label. The lookup returns only the text | `test_review_shows_the_verse_text_before_asking`, `test_approved_reference_goes_live` |
+| US-1 | A reference that does not exist is reported as invalid | Met at lookup (`VerseNotFoundError`). The app shows a message; see US-2 | `test_verse_raises_for_missing_verse`, `test_invalid_reference` |
 | US-2 | A typed valid reference becomes a suggestion | Met, but only if it is in a supported form. There is no separate manual-entry field: the operator's typing is the only input, and it goes through the detector | `test_approved_reference_goes_live` (end to end) |
-| US-2 | A typed invalid reference shows an error and creates no suggestion | **Partly met**: no suggestion is created, but no error is shown. The same is true for references in an unsupported form | `test_skips_references_that_do_not_exist` (no suggestion only) |
+| US-2 | A typed invalid reference shows an error and creates no suggestion | Met when the line has no valid reference: the app prints "No valid Bible reference found in the text." If a line holds both a valid and an invalid reference, the invalid one is dropped without a message | `test_no_references_found`, `test_invalid_reference` |
 | US-3 | A supported reference becomes a suggestion with book, chapter, verse and KJV text | Met | `test_suggests_a_candidate_with_the_verse_text`, `test_finds_reference_in_sentence`, `test_detector_agrees_with_the_labelled_example` |
 | US-3 | Several references in one line each become a suggestion, in order | Met | `test_finds_several_references_in_order` (detection only) |
 | US-3 | Text that is not a valid reference creates no suggestion | Met | `test_skips_references_that_do_not_exist`, `test_returns_empty_list_when_no_reference` |
@@ -66,9 +67,8 @@ the single approve-or-reject question.
 
 ## Gaps to close
 
-- US-2: show a message when a typed line contains no valid reference, instead of
-  doing nothing.
 - US-4: add an end-to-end test that `main` writes each decision to the log.
-- US-1: add a test that the `LIVE:` line carries the "KJV" label. Optionally, read the
-  label from the `translation` field of the Bible file instead of hard-coding it.
+- US-1: optionally, read the "KJV" label from the `translation` field of the Bible
+  file instead of hard-coding it.
+- US-2: also report an invalid reference when the same line holds a valid one.
 - US-3: measure the 5-second target once speech recognition is in place.
