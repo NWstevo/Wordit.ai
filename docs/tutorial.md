@@ -38,7 +38,7 @@ Wordit.ai shows what it found, the verse text, and the line it heard:
 
 ```text
 Suggestion: Acts 2:1
-Verse (KJV): And when the day of pentecost was finally come, they were all in one accord in one place.
+Verse (KJV): And when the day of Pentecost was fully come, they were all with one accord in one place.
 Heard: "Today our reading will be from the book of Acts 2:1"
 Approve (a) or Reject (r)?
 ```
@@ -47,7 +47,7 @@ Check that the verse matches what the preacher meant, then type `a` and press En
 The verse goes live:
 
 ```text
-LIVE: Acts 2:1 (KJV) And when the day of pentecost was finally come, ...
+LIVE: Acts 2:1 (KJV) And when the day of Pentecost was fully come, ...
 ```
 
 ## Step 3: Reject a reference

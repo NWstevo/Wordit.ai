@@ -10,11 +10,12 @@ Created by Stephen Wiendoh Ntah (NWstevo), CODE University of Applied Sciences, 
 
 ## Key Features at the moment
 
-Wordit.ai is currently in phase 1. It runs in the terminal and uses a text as sample input for the preacher's voice or sermon.
+Wordit.ai is currently in phase 1. It runs in the terminal, and typed text stands in for the preacher's voice.
 
 - Finds Bible references in a sentence, such as "Romans 8:28" or "John chapter 3 verse 16".
 - Looks up each verse using the King James Version of the Bible.
 - Shows each suggestion to the operator, who decides to either approve or reject it.
+- Tells the operator when a line has no valid reference.
 - Shows approved verses as live output.
 - Logs every decision in a log file.
 
@@ -44,8 +45,7 @@ python -m wordit
 ```
 
 ```text
-Type what the preacher says. Press Enter on an empty line to finish.
-Preacher says: Turn with me to John 3:16
+Type what the preacher says. Press Enter on an empty line to finish. Turn with me to John 3:16
 Suggestion: John 3:16
 Verse (KJV): For God so loved the world, that he gave his only begotten Son, ...
 Heard: "Turn with me to John 3:16"
@@ -65,7 +65,7 @@ Press Enter on an empty line to stop. Each decision is saved in `decisions.log`.
 pytest
 ```
 
-The test suite has 55 tests, runs in under a second, and covers 98 % of the code.
+The test suite has 58 tests, runs in under a second, and covers 98 % of the code.
 To see which lines are covered, run:
 
 ```bash
@@ -124,11 +124,12 @@ King James Version; references to verses that do not exist are skipped. Every
 remaining reference becomes a candidate that the operator approves or rejects.
 Only approved verses go live, and every decision is written to `decisions.log`.
 
-## Future Work (phase 2)
+## Future work (phase 2)
 
-Planned: speech recognition, so Wordit.ai listens to the sermon directly.
-
-Planned: NDI output for OBS Studio, vMix, EasyWorship and ProPresenter.
+- Speech recognition, so Wordit.ai listens to the sermon directly
+- More translations: 5 of 6 pastors in my survey want the translation they preach from on screen
+- Common name variants such as "First Corinthians" and "Psalm", which most pastors use
+- NDI output for OBS Studio, vMix, EasyWorship and ProPresenter
 
 ---
 
